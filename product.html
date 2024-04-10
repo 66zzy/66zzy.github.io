@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字孪生</title>
+    <link rel="stylesheet" href="com/header_footer.css">
+    <style>
+        .detail{
+            height: 100vh;
+            margin: 2vh 0;
+        }
+        .detail video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <section>
+            <section class="detail">
+                <video autoplay muted loop src="assets/nuclear_electricity.mp4"></video>
+                <div style="width: 40vw;position: absolute;top:25vh;left:10vw">
+                    <h2 style="color: white;font-size: 40px;">项目介绍</h2>
+                    <br>
+                    <br>
+                    <p style="font-size:20px; color:white;">
+                    研究目的：本项目研究目标为在已经建立的反应堆物理堆芯运行数字孪生模型基础上，通过优化模型降阶方法、机器学习技术和反问题建模，实现对反应堆运行状态的快速准确监测和操纵。
+                    <br>
+                    <br>
+                    可视化系统：通过一维到三维对于核反应堆实时数据的展示，让用户更加直观了解到核反应堆的状况，通过数字化手段监测核反应堆状况。
+                    </p>
+                </div>
+            </section>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="com/header_footer.js"></script>
+</body>
+</html>
