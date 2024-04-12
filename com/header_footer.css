@@ -19,6 +19,13 @@ header h1{
     line-height: 10vh;
     font-size: 30px;
 }
+header .list{
+    position: absolute;
+    right: 5vw;
+    top: 0vh;
+    line-height: 10vh;
+    font-size: 30px;
+}
 header a{
     color: white;
     text-decoration: none;
@@ -30,21 +37,15 @@ header a:hover{
 }
 header li{
     display: inline-block;
-    padding: 0 0px;
     vertical-align: top;
     text-align: center;
     width: 180px;
 }
-header .list{
-    position: absolute;
-    right: 5vw;
-    top: 0vh;
-    line-height: 10vh;
-    font-size: 30px;
-}
+/* 选项 */
 header .menu .content{
     position: absolute;
     top: 10vh;
+    min-width: 180px;
     display: none;
     background-color: rgb(52, 74, 83, 0.7);
     box-shadow: 0 0 4px black;
@@ -53,7 +54,7 @@ header .menu .content{
 header .menu:hover .content{
     display: flex;
 }
-/* 菜单中的列 */
+/* 选项中的列 */
 header .menu .content div{
     display: block;
     line-height: 30px;

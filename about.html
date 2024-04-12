@@ -6,14 +6,133 @@
     <title>数字孪生</title>
     <link rel="stylesheet" href="com/header_footer.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .carousel-container {
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        }
+        .carousel {
+          display: flex;
+          transition: transform 0.5s ease;
+        }
+        .carousel-item {
+          flex: 0 0 100%;
+        }
+        .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 30px;
+        }
+        .carousel-btn:hover {
+        color: skyblue;
+        }
+        .prev-btn {
+          left: 10px;
+        }
+        .next-btn {
+          right: 10px;
+        }
+      </style>
 </head>
 <body>
     <div id="header"></div>
-    <main>
-        <section>
-            <img src="assets/sjtu.jpg" alt="上海交通大学" style="width: 100%;height: 100%;object-fit: cover;z-index: -1;">
-        </section>
-    </main>
+        
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="/assets/sjtu.jpg" style="width:100vw">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/sjtu.jpg" style="width:100vw">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/sjtu.jpg" style="width:100vw">
+            </div>
+        </div>
+        <div class="carousel-btn prev-btn">&#10094;</div>
+        <div class="carousel-btn next-btn">&#10095;</div>
+    </div>
+          
+    <script>
+    const carousel = document.querySelector('.carousel');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+    const slideWidth = carouselItems[0].clientWidth;
+
+    function goToSlide(index) {
+        carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+        currentIndex = index;
+    }
+    if (currentIndex > 0) {prevBtn.style.display = 'block';
+    }else {prevBtn.style.display = 'none';}
+    if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
+    }else {nextBtn.style.display = 'none';}
+    function nextSlide() {
+        if (currentIndex < carouselItems.length - 1) {
+        goToSlide(currentIndex + 1);
+        }else{
+        goToSlide(currentIndex);
+        }
+        if (currentIndex > 0) {prevBtn.style.display = 'block';
+        }else {prevBtn.style.display = 'none';}
+        if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
+        }else {nextBtn.style.display = 'none';}
+    }
+    
+    function prevSlide() {
+        if (currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+        }else{
+        goToSlide(currentIndex);
+        }
+        if (currentIndex > 0) {prevBtn.style.display = 'block';
+        }else {prevBtn.style.display = 'none';}
+        if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
+        }else {nextBtn.style.display = 'none';}
+    }
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    let startX = 0;
+    let isDragging = false;
+    let shiftX = 0;
+    
+    carousel.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        isDragging = true;
+        startX = e.clientX;
+        shiftX = 0;
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+        const currentX = e.clientX;
+        shiftX = currentX - startX;
+        carousel.style.transform = `translateX(-${currentIndex * slideWidth - shiftX}px)`;
+        }
+    });
+    
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        const movedIndex = Math.round(shiftX / slideWidth);
+        if (movedIndex < 0) {
+        nextSlide();
+        } else if (movedIndex > 0) {
+        prevSlide();
+        } else {
+        goToSlide(currentIndex);
+        };
+    });
+    </script>
     <div id="footer"></div>
     <script src="com/header_footer.js"></script>
 </body>
