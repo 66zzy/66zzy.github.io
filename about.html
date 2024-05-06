@@ -12,26 +12,26 @@
         margin: 0 auto;
         overflow: hidden;
         position: relative;
-        top:10vh
+        top:10vh;
         }
         .carousel {
           display: flex;
-          transition: transform 0.5s ease;
+          transition: transform 0s,
         }
         .carousel-item {
-          flex: 0 0 100%;
+          flex: 0 0 100vw;
           height: 70vh;
           margin: 1vh 0 11vh;
           background-color: #D6EAE2;
         }
             .carousel-item img {
-            width: 60vw;
+            width: 55vw;
             height: 100%;
             position: relative;
             left:40%
             }
             .carousel-item p {
-            animation: slideInFromRight 2s ease-out;
+            animation: slideInFromRight 1.5s ease-out;
             }
             @keyframes slideInFromRight {
             0% {
@@ -45,21 +45,22 @@
             }
         .carousel-btn {
         position: absolute;
-        top: 50%;
+        top: 45%;
         transform: translateY(-50%);
-        padding: 20px;
+        padding: 30vh 20px;
         cursor: pointer;
-        color: white;
-        font-size: 30px;
+        color: black;
+        font-size: 35px;
+        border-radius: 5px;
         }
         .carousel-btn:hover {
         color: skyblue;
         }
         .prev-btn {
-          left: 10px;
+          left: 0;
         }
         .next-btn {
-          right: 10px;
+          right: 0;
         }
       </style>
 </head>
@@ -80,9 +81,9 @@
                 <img src="/assets/sjtu.jpg">
             </div>
         </div>
-        <div class="carousel-btn prev-btn">&#10094;</div>
-        <div class="carousel-btn next-btn">&#10095;</div>
     </div>
+    <div class="carousel-btn prev-btn">&#10094;</div>
+    <div class="carousel-btn next-btn">&#10095;</div>
           
     <script>
     const carousel = document.querySelector('.carousel');
@@ -92,34 +93,21 @@
 
     let currentIndex = 0;
     const slideWidth = carouselItems[0].clientWidth;
-
-    function goToSlide(index) {
-        carousel.style.transform = `translateX(-${index * slideWidth}px)`;
-        currentIndex = index;
-    }
     if (currentIndex > 0) {prevBtn.style.display = 'block';
     }else {prevBtn.style.display = 'none';}
-    if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
+    if (currentIndex < carouselItems.length-1) {nextBtn.style.display = 'block';
     }else {nextBtn.style.display = 'none';}
-    function nextSlide() {
-        goToSlide(currentIndex + 1);
-        switchCarouselItem(currentIndex+1);
+    function goToSlide(index) {
+        carousel.style.transition = 'transform 1s ease'; 
+        carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+        currentIndex = index;
         if (currentIndex > 0) {prevBtn.style.display = 'block';
         }else {prevBtn.style.display = 'none';}
-        if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
+        if (currentIndex < carouselItems.length-1) {nextBtn.style.display = 'block';
         }else {nextBtn.style.display = 'none';}
-    }
-    
-    function prevSlide() {
-        goToSlide(currentIndex - 1);
-        switchCarouselItem(currentIndex-1);
-        if (currentIndex > 0) {prevBtn.style.display = 'block';
-        }else {prevBtn.style.display = 'none';}
-        if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
-        }else {nextBtn.style.display = 'none';}
+        switchCarouselItem(currentIndex);
     }
     function switchCarouselItem(newIndex) {
-        var carouselItems = document.querySelectorAll('.carousel-item');
         carouselItems.forEach(function(item, index) {
             if (index === newIndex) {
                 item.classList.remove('carousel-item');
@@ -127,6 +115,14 @@
                 item.classList.add('carousel-item');
             }
         });
+    }
+    function nextSlide() {
+        console.log(currentIndex);
+        goToSlide(currentIndex + 1);
+    }
+    function prevSlide() {
+        console.log(currentIndex);
+        goToSlide(currentIndex - 1);
     }
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
@@ -142,24 +138,29 @@
         shiftX = 0;
     });
     
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', (e) => { 
         if (isDragging) {
         const currentX = e.clientX;
         shiftX = currentX - startX;
+        carousel.style.transition = 'transform 0s';
         carousel.style.transform = `translateX(-${currentIndex * slideWidth - shiftX}px)`;
         }
     });
     
     document.addEventListener('mouseup', () => {
+        if (isDragging) {
         isDragging = false;
         const movedIndex = Math.round(shiftX / slideWidth);
         if (movedIndex < 0) {
+            console.log('next');
         nextSlide();
         } else if (movedIndex > 0) {
+            console.log('prev');
         prevSlide();
         } else {
         goToSlide(currentIndex);
         };
+    }
     });
     </script>
     <div id="footer"></div>
