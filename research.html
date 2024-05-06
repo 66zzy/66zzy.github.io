@@ -5,19 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思源孪生</title>
     <link rel="icon" href="/assets/slogo.ico">
-    <link rel="stylesheet" href="com/header_footer.css">
+    <link rel="stylesheet" href="/com/header_footer.css">
+    <style>
+        .detail{
+            padding: 12vh 0 4vw 4vw;
+            background-color: #C0FCF9;
+        }
+        .detail .class{
+            width: 92vw;
+            display: flex;
+            justify-content: space-around;
+        }
+        .detail h2{
+            font-size: 30px;
+            color: #027371;
+            margin: 20px 0;
+        }
+        .enter{
+            width: 28vw;
+            height: 32vw;
+            margin: 10px 0;
+            background-color:#8EE6E2;
+        }
+        .enter img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .enter p{
+            font-size: 21px;
+            width: 80%;
+            margin: 10px 0 0 30px;
+            color:#027371;
+            word-break: break-all;
+        }
+        header{
+            background-color: #8EE6E2;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div id="header"></div>
     <main>
-        <section>
-            <section class="detail">
-                <video autoplay muted loop src="assets/nuclear_electricity.mp4"></video>
-            </section>
+        <section class="detail">
+            <h1 style="text-align: center;font-size: 50px;line-height: 110px;color: #027371;">科研发表</h1>
+            <div>
+                <h2>论文</h2>
+            </div>
+            <div class="class">
+            <div class="enter">
+                <p>LizhanHong,HelinGong,∗,HongjunJi,JialiangLu,HanLi,QingLi.OntheAccuracyandEfficiencyoftheReactorOperationDigitalTwinforParameterIdentificationandStateEstimation.2023.NuclearScienceandTechniques.</p>
+            </div>
+            <div class="enter">
+                <p>HanLi,JialiangLu,HongjunJi,LizhanHong,HelinGong*.AnoiseandvibrationtolerantResNetforfieldreconstructionwithsparsesensors.2023.CommunicationsinComputationalPhysics.</p>
+            </div>
+            <div class="enter">
+                <p>HelinGong,HanLi,DunhuiXiao,SiboCheng*.ReactorfieldreconstructionfromsparseandmovablesensorswithVoronoitessellation-assistedconvolutionalneuralnetworks.2023.NuclearScienceandTechniques.</p>
+            </div>
+            </div>
+            <div class="class">
+            <div class="enter">
+                <p>Gong,H.;Cheng,S.;Chen,Z.;Li,Q.*;Quilodrán-Casas,C.;Xiao,D.andArcucci,R.AnefficientdigitaltwinbasedonmachinelearningSVDautoencoderandgeneralisedlatentassimilationfornuclearreactorphysics.AnnalsofNuclearEnergy.179(2022):109431.[SCI]</p>
+            </div>
+            <div class="enter">
+                <p>Gong,H.;Cheng,S.;Chen,Z.andLi,Q*.Data-EnabledPhysics-InformedMachineLearningforReduced-OrderModelingDigitalTwin:ApplicationtoNuclearReactorPhysics.NuclearScienceandEngineering,Taylor&Francis,2022,196,668-693.[SCI]</p>
+            </div>
+            <div class="enter">
+                <p>龚禾林，洪历展，赵文博等.基于全局-局部搜索的核反应堆运行孪生反问题求解[J].原子能科学技术</p>
+            </div>
+            </div>
+            <div>
+                <h2>专利</h2>
+            </div>
+            <div class="class">
+            <div class="enter">
+                <img src="/assets/patent1.png" alt="专利1">
+                <!-- <p>龚禾林，李庆，陈长，钟旻霄.用于反应堆运行参数优化的数据同化方法、系统及终端.中国,CN115408861B.2023-11-10[有权]</p> -->
+            </div>
+            <div class="enter">
+                <img src="/assets/patent2.png" alt="专利2">
+                <!-- <p>李庆,龚禾林,陈长,赵文博,于颖锐,彭星杰,宫兆虎,刘琨,周冰燕,刘佳艺,张斌,王冬勇.基于模型降阶和数据同化的堆芯功率分布在线监测方法及系统.中国,CN113409975B[P].2021-09-17.[有权]</p> -->
+            </div>
+            <div class="enter">
+                <img src="/assets/patent3.png" alt="专利3">
+                <!-- <p>龚禾林,李庆,于颖锐,陈长,赵文博,彭星杰,刘同先,娄磊,巨海涛,吉文浩.基于局部非线性修正的堆芯功率分布在线重构方法及系统.中国,CN113421669B[P].2021-09-21.[有权]</p> -->
+            </div>
+            </div>
         </section>
     </main>
     <div id="footer"></div>
-    <script src="com/header_footer.js"></script>
+    <script src="/com/header_footer.js"></script>
 </body>
 </html>

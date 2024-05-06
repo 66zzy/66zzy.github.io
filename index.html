@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思源孪生</title>
     <link rel="icon" href="/assets/slogo.ico">
-    <link rel="stylesheet" href="com/header_footer.css">
+    <link rel="stylesheet" href="/com/header_footer.css">
     <style>
         .news{
             height: 100vh;
@@ -38,15 +38,30 @@
             font-size: 30px;
             color: white;
         }
-        .detail{
-            height: 100vh;
-            margin: 2vh 0;
+        .advantage{
+            display: flex;
+            justify-content: space-around;
         }
-        .detail video{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+        .advantage img{
+            margin: 5% 31%;
+            width: 38%;
+            height: 10vw;
+            justify-content: center;
+        }
+        .advantage h2{
+            font-size: 29px;
+            text-align: center;
+            color: #7ce2e3;
+        }
+        .advantage p{
+            font-size: 21px;
+            margin: 5% 7% 7%;
+            color: white;
+        }
+        .advantage div{
+            width: 29vw;
+            margin: 20px 0;
+            background-color:#027371;
         }
         @media (max-width: 768px){
         .title{
@@ -60,15 +75,29 @@
     <div id="header"></div>
     <main>
         <section class="news">
-            <video autoplay muted loop src="assets/digital.mp4"></video>
+            <video autoplay muted loop src="/assets/digital.mp4"></video>
             <h2>工业体<br>数字孪生</h2>
             <p>数字孪生——未来工业体的智能解决方案</p>
         </section>
-        <section class="detail">
-            <video autoplay muted loop src="assets/nuclear_electricity.mp4"></video>
+        <section class="advantage">
+            <div>
+                <img src="/assets/reliable.png" alt="可靠">
+                <h2>提供可靠的决策支持</h2>
+                <p>我们的系统将为核电站的运营人员提供准确的模拟和预测结果，帮助他们制定优化的运行策略和维护计划，以及及时应对潜在的运行风险。我们的目标是提供可靠的决策支持，帮助核电站实现安全、高效的运行。</p>
+            </div>
+            <div>
+                <img src="/assets/digital.png" alt="数字化">
+                <h2>推动核能行业的数字化转型</h2>
+                <p>我们致力于推动核能行业向数字化转型迈进。通过数字孪生技术的应用，我们将实现物理实体与数字模型的实时同步，为核电站提供实时监测、预测和优化的能力。我们的目标是推动核能行业实现智能化升级，提高核能在能源供应中的地位。</p>
+            </div>
+            <div>
+                <img src="/assets/enhance.png" alt="提升功率">
+                <h2>提升核电厂的功率水平</h2>
+                <p>我们的团队致力于提升核电厂的安全运行功率水平，不断提高核能行业的发展水平。通过引领技术的发展和创新，我们将不断改进和完善核反应堆运行孪生系统，提高其性能和可靠性。我们的目标是为核能行业提供先进的解决方案，推动行业的持续发展和创新。</p>
+            </div>
         </section>
     </main>
     <div id="footer"></div>
-    <script src="com/header_footer.js"></script>
+    <script src="/com/header_footer.js"></script>
 </body>
 </html>

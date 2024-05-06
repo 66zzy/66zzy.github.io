@@ -5,17 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思源孪生</title>
     <link rel="icon" href="/assets/slogo.ico">
-    <link rel="stylesheet" href="com/header_footer.css">
+    <link rel="stylesheet" href="/com/header_footer.css">
     <style>
         .detail{
-            height: 100vh;
-            margin: 2vh 0;
+            margin: 12vh 4vw 0vw 4vw;
         }
-        .detail video{
+        .detail .class{
+            width: 92vw;
+            display: flex;
+            justify-content: space-around;
+        }
+        .detail .class a{
+            text-decoration: none;
+        }
+        .enter{
+            width: 28vw;
+            height: 30vw;
+            margin: 10px 0;
+            background-color: whitesmoke;
+        }
+        .enter img{
             width: 100%;
-            height: 100%;
+            height: 70%;
             object-fit: cover;
-            z-index: -1;
+            transform: scale(1);
+            translate: transform 1s;
+        }
+        .enter:hover img{
+            transform: scale(1.1);
+        }
+        .enter p{
+            font-size: 21px;
+            margin: 30px 0px 0px 30px;
+            color: black;
+        }
+        .enter:hover{
+            background-color: lightgray;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,24 +48,31 @@
 <body>
     <div id="header"></div>
     <main>
-        <section>
-            <section class="detail">
-                <video autoplay muted loop src="assets/nuclear_electricity.mp4"></video>
-                <div style="width: 40vw;position: absolute;top:25vh;left:10vw">
-                    <h2 style="color: white;font-size: 40px;">项目介绍</h2>
-                    <br>
-                    <br>
-                    <p style="font-size:20px; color:white;">
-                    研究目的：本项目研究目标为在已经建立的反应堆物理堆芯运行数字孪生模型基础上，通过优化模型降阶方法、机器学习技术和反问题建模，实现对反应堆运行状态的快速准确监测和操纵。
-                    <br>
-                    <br>
-                    可视化系统：通过一维到三维对于核反应堆实时数据的展示，让用户更加直观了解到核反应堆的状况，通过数字化手段监测核反应堆状况。
-                    </p>
-                </div>
-            </section>
+        <section class="detail">
+            <h2 style="text-align: center;font-size: 35px;line-height: 140px;">产品&服务</h2>
+            <div class="class">
+            <a href="/product/product1.html"><div class="enter">
+                <img src="/assets/nuclear.jpg" alt="核电站">
+                <p>华龙一号HPR1000</p>
+            </div></a>
+            <a href="/product/product2.html"><div class="enter">
+                <img src="/assets/aerospace.jpg" alt="航空">
+                <p>航空动力</p>
+            </div></a>
+            <a href="/product/product3.html"><div class="enter">
+                <img src="/assets/wind.jpg" alt="风电">
+                <p>风电场</p>
+            </div></a>
+            </div>
+            <div class="class">
+            <a href="/product/product4.html"><div class="enter">
+                <img src="/assets/car.jpg" alt="新能源汽车">
+                <p>新能源汽车厂</p>
+            </div></a>
+            </div>
         </section>
     </main>
     <div id="footer"></div>
-    <script src="com/header_footer.js"></script>
+    <script src="/com/header_footer.js"></script>
 </body>
 </html>

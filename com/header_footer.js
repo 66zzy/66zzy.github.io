@@ -1,2 +1,2 @@
-$("#header").load("com/header.html");
-$("#footer").load("com/footer.html");
+$("#header").load("/com/header.html");
+$("#footer").load("/com/footer.html");

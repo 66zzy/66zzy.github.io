@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思源孪生</title>
     <link rel="icon" href="/assets/slogo.ico">
-    <link rel="stylesheet" href="com/header_footer.css">
+    <link rel="stylesheet" href="/com/header_footer.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .carousel-container {
         margin: 0 auto;
         overflow: hidden;
         position: relative;
+        top:10vh
         }
         .carousel {
           display: flex;
@@ -19,7 +20,29 @@
         }
         .carousel-item {
           flex: 0 0 100%;
+          height: 70vh;
+          margin: 1vh 0 11vh;
+          background-color: #D6EAE2;
         }
+            .carousel-item img {
+            width: 60vw;
+            height: 100%;
+            position: relative;
+            left:40%
+            }
+            .carousel-item p {
+            animation: slideInFromRight 2s ease-out;
+            }
+            @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            }
         .carousel-btn {
         position: absolute;
         top: 50%;
@@ -46,13 +69,15 @@
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-item">
-                <img src="/assets/sjtu.jpg" style="width:100vw">
+                <img src="/assets/sjtu.jpg">
+                <p style="position: absolute;top:7%;left:5%;width: 30%;font-size: 40px;">推动核能行业数字化转型</p>
+                <p style="position: absolute;top:25%;left:5%;width: 30%;font-size: 20px;">我们的团队是由核能领域的专业人才和技术专家组成的高效团队。团队成员具备丰富的核能领域知识和经验，在机器学习、降阶模型和核反应堆物理等方面拥有深厚的专业功底。我们紧密合作，共同致力于开发和提供先进的核反应堆运行孪生系统，为核电站的运行提供可靠的决策支持。<br>我们的团队以创新、卓越和合作为核心价值观，注重团队合作和技术创新。我们不断追求卓越，保持对技术的敬畏和追求，致力于为核能行业的发展做出积极贡献。我们的团队将不断努力，与合作伙伴和客户紧密合作，共同推动核能行业的数字化发展和进步。</p>
             </div>
             <div class="carousel-item">
-                <img src="/assets/sjtu.jpg" style="width:100vw">
+                <img src="/assets/sjtu.jpg">
             </div>
             <div class="carousel-item">
-                <img src="/assets/sjtu.jpg" style="width:100vw">
+                <img src="/assets/sjtu.jpg">
             </div>
         </div>
         <div class="carousel-btn prev-btn">&#10094;</div>
@@ -77,11 +102,8 @@
     if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
     }else {nextBtn.style.display = 'none';}
     function nextSlide() {
-        if (currentIndex < carouselItems.length - 1) {
         goToSlide(currentIndex + 1);
-        }else{
-        goToSlide(currentIndex);
-        }
+        switchCarouselItem(currentIndex+1);
         if (currentIndex > 0) {prevBtn.style.display = 'block';
         }else {prevBtn.style.display = 'none';}
         if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
@@ -89,17 +111,23 @@
     }
     
     function prevSlide() {
-        if (currentIndex > 0) {
         goToSlide(currentIndex - 1);
-        }else{
-        goToSlide(currentIndex);
-        }
+        switchCarouselItem(currentIndex-1);
         if (currentIndex > 0) {prevBtn.style.display = 'block';
         }else {prevBtn.style.display = 'none';}
         if (currentIndex < carouselItems.length - 1) {nextBtn.style.display = 'block';
         }else {nextBtn.style.display = 'none';}
     }
-    
+    function switchCarouselItem(newIndex) {
+        var carouselItems = document.querySelectorAll('.carousel-item');
+        carouselItems.forEach(function(item, index) {
+            if (index === newIndex) {
+                item.classList.remove('carousel-item');
+                void item.offsetWidth; // 强制浏览器重新计算样式和布局
+                item.classList.add('carousel-item');
+            }
+        });
+    }
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
     
@@ -135,6 +163,6 @@
     });
     </script>
     <div id="footer"></div>
-    <script src="com/header_footer.js"></script>
+    <script src="/com/header_footer.js"></script>
 </body>
 </html>
