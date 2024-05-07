@@ -62,6 +62,31 @@
         .next-btn {
           right: 0;
         }
+        #member,#contact{
+        background-color:#C0FCF9;
+        }
+        #member h2,#contact h2{
+        font-size: 30px;
+        color: #027371;
+        padding:30px 4vw;
+        }
+        #member h3{
+        font-size: 25px;
+        color: #027371;
+        padding:10px 5vw;
+        }
+        #member img{
+        margin: 10px;
+        width: 12vw;
+        }
+        #member p,#member h4{
+        text-align: center;
+        }
+        #contact p{
+        font-size: 21px;
+        color:#027371;
+        padding:15px 4vw 30px;
+        }
       </style>
 </head>
 <body>
@@ -84,7 +109,7 @@
     </div>
     <div class="carousel-btn prev-btn">&#10094;</div>
     <div class="carousel-btn next-btn">&#10095;</div>
-          
+    
     <script>
     const carousel = document.querySelector('.carousel');
     const carouselItems = document.querySelectorAll('.carousel-item');
@@ -163,6 +188,95 @@
     }
     });
     </script>
+    <div id="member">
+        <h2>团队介绍</h2>
+        <div style="display: flex;">
+        <div style="width: 30%;">
+            <h3 style="margin-bottom: 20px;">项目负责人</h3>
+            <img src="/assets/member1.jpg" style="width: 90%;">
+            <h4 style="font-size: 20px;">洪历展</h4>
+            <p style="font-size: 18px;margin-bottom: 10px;">创始人&CEO</p>
+            <p style="margin-bottom: 5px;">上海交通大学巴黎卓越工程师学院<br>信息工程+法语大二本科生</p>
+            <p>全国大学生数学建模大赛国家二等奖 
+            <br>上海市大学生健身健美锦标赛冠军 
+            <br>上海交通大学街头健身协会会长
+            <br>巴黎卓越工程师学院科创中心部长 
+            <br>已发表论文2篇，申请发明专利1项 
+            <br>上海交通大学优秀团员</p>
+        </div>
+        <div style="width: 70%;">
+            <h3>项目核心成员</h3>
+            <div style="display: flex;">
+                <h3 style="margin-right: 25%;">商科团队</h3>
+                <h3>设计团队</h3>
+            </div>
+            <div style="display: flex;justify-content: space-around;">
+            <div style="display: flex;">
+                <div>
+                    <img src="/assets/member2.png">
+                    <h4>萧明远</h4>
+                    <p style="margin-bottom: 5px;">22级安泰经济与管理学院</p>
+                    <p>安泰职发协会宣传部长<br>天风证券实习生</p>
+                </div>
+                <div>
+                    <img src="/assets/member3.png">
+                    <h4>刘晔梁</h4>
+                    <p style="margin-bottom: 5px;">22级安泰经济与管理学院</p>
+                    <p>交大红十字会宣传部长<br>曾奥玮咨询实习生</p>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div>
+                    <img src="/assets/member4.png">
+                    <h4>敖婧珂</h4>
+                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
+                    <p>卓越杯3D打印大赛三等奖<br>vex校内赛二等奖</p>
+                </div>
+                <div>
+                    <img src="/assets/member5.png">
+                    <h4>赵心怡</h4>
+                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
+                    <p>卓越杯3D打印大赛三等奖<br>vex校内赛一等奖</p>
+                </div>
+            </div>
+            </div>
+            <h3>工科团队</h3>
+            <div style="display: flex;justify-content: space-around;">
+                <div>
+                    <img src="/assets/member6.png">
+                    <h4>黄海城</h4>
+                    <p style="margin-bottom: 5px;">22级巴黎卓越工程师学院</p>
+                    <p>数学建模国赛省三等奖<br>一篇sci论文在投</p>
+                </div>
+                <div>
+                    <img src="/assets/member7.png">
+                    <h4>任子谦</h4>
+                    <p style="margin-bottom: 5px;">22级巴黎卓越工程师学院</p>
+                    <p>优秀团员<br>数学竞赛市二等奖</p>
+                </div>
+                <div>
+                    <img src="/assets/member8.png">
+                    <h4>关怀</h4>
+                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
+                    <p>robomaster校内赛一等奖<br>vex校内赛一等奖</p>
+                </div>
+                <div>
+                    <img src="/assets/member9.png">
+                    <h4>郑子易</h4>
+                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
+                    <p>美国大学生数学建模竞赛特等提名奖<br>vex校内赛三等奖</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <h3>专家顾问</h3>
+        </div>
+    </div>
+    <div id="contact">
+        <h2>加入我们/联系我们</h2>
+        <p>微信号：Hong18860376438</p>
+    </div>
     <div id="footer"></div>
     <script src="/com/header_footer.js"></script>
 </body>
