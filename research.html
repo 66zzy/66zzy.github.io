@@ -9,7 +9,7 @@
     <style>
         .detail{
             padding: 12vh 0 4vw 4vw;
-            background-color: #C0FCF9;
+            background-color:#8EE6E2;
         }
         .detail .class{
             width: 92vw;
@@ -21,37 +21,48 @@
             color: #027371;
             margin: 20px 0;
         }
-        .paper,.patent{
-            width: 28vw;
-            height: 32vw;
-            margin: 10px 0;
-            background-color:#8EE6E2;
-        }
         .paper{
             width: 28vw;
             height: 26vw;
             margin: 10px 0;
-            background-color:#8EE6E2;
+            background-color: white;
         }
         .patent{
             width: 25vw;
             height: 35vw;
             margin: 10px 0;
-            background-color:#8EE6E2;
+            background-color: white;
         }
-        .paper img,.patent img{
+        .paper img{
             width: 100%;
+            height: 50%;
             object-fit: cover;
         }
-        .paper p,.patent p{
+        .patent img{
+            width: 100%;
+            height: 100%;
+        }
+        .paper p{
             font-size: 21px;
             width: 90%;
-            margin: 0 0 0 30px;
-            color:#027371;
+            margin: 30px 0 0 20px;
+            color: black;
             word-break: break-all;
+        }
+        .paper a{
+            text-decoration: none;
         }
         header{
             background-color: #8EE6E2;
+        }
+        .box{
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.6s ease,opacity 0.4s ease;
+        }
+        .box.show {
+        transform: translateX(0);
+        opacity: 1;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -61,55 +72,71 @@
     <main>
         <section class="detail">
             <h1 style="text-align: center;font-size: 50px;line-height: 110px;color: #027371;">科研发表</h1>
-            <div>
+            <div class="box">
                 <h2>论文</h2>
+                <div class="class">
+                <div class="paper">
+                    <a href="/assets/paper/On the accuracy and efficiency of the reactor operation digital twin for parameter identification and state estimation.pdf" download>
+                    <img src="/assets/paper1.png" alt="paper1">
+                    <p>On the accuracy and efficiency of the reactor operation digital twin for parameter identification and state estimation</p>
+                    </a>
+                </div>
+                <div class="paper">
+                    <a href="/assets/paper/Reactor field reconstruction from sparse and movable sensors using Voronoi tessellation-assisted convolutional neural networks.pdf" download>
+                    <img src="/assets/paper2.png" alt="paper2">
+                    <p>Reactor field reconstruction from sparse and movable sensors using Voronoi tessellation-assisted convolutional neural networks</p>
+                    </a>
+                </div>
+                <div class="paper">
+                    <a href="/assets/paper/Neural-Network-Augmented Empirical Interpolation Method for Field Reconstruction with Noise and Vibration Tolerance.pdf" download>
+                    <img src="/assets/paper3.png" alt="paper3">
+                    <p>Neural-Network-Augmented Empirical Interpolation Method for Field Reconstruction with Noise and Vibration Tolerance</p>
+                    </a>
+                </div>
+                </div>
+                <div class="class">
+                <div class="paper">
+                    <a href="/assets/paper/An Efficient Digital Twin Based on Machine Learning Svd Autoencoder and Generalised Latent Assimilation for Nuclear Reactor Physics.pdf" download>
+                    <img src="/assets/paper4.png" alt="paper4">
+                    <p>An Efficient Digital Twin Based on Machine Learning Svd Autoencoder and Generalised Latent Assimilation for Nuclear Reactor Physics</p>
+                    </a>
+                </div>
+                <div class="paper">
+                    <a href="/assets/paper/Data-Enabled Physics-Informed Machine Learning for Reduced-Order Modeling Digital Twin Application to Nuclear Reactor Physics.pdf" download>
+                    <img src="/assets/paper5.png" alt="paper5">
+                    <p>Data-Enabled Physics-Informed Machine Learning for Reduced-Order Modeling Digital Twin Application to Nuclear Reactor Physics</p>
+                    </a>
+                </div>
+                <div class="paper">
+                    <a href="/assets/paper/基于“全局”局部搜索的反应堆运行孪生反问题求解.pdf" download>
+                    <img src="/assets/paper6.png" alt="paper6">
+                    <p>基于“全局”局部搜索的反应堆运行孪生反问题求解</p>
+                    </a>
+                </div>
+                </div>
             </div>
-            <div class="class">
-            <div class="paper">
-                <img src="/assets/paper1.png" alt="paper1">
-                <p>LizhanHong,HelinGong,∗,HongjunJi,JialiangLu,HanLi,QingLi.OntheAccuracyandEfficiencyoftheReactorOperationDigitalTwinforParameterIdentificationandStateEstimation.2023.NuclearScienceandTechniques.</p>
-            </div>
-            <div class="paper">
-                <img src="/assets/paper2.png" alt="paper2">
-                <p>HanLi,JialiangLu,HongjunJi,LizhanHong,HelinGong*.AnoiseandvibrationtolerantResNetforfieldreconstructionwithsparsesensors.2023.CommunicationsinComputationalPhysics.</p>
-            </div>
-            <div class="paper">
-                <img src="/assets/paper3.png" alt="paper3">
-                <p>HelinGong,HanLi,DunhuiXiao,SiboCheng*.ReactorfieldreconstructionfromsparseandmovablesensorswithVoronoitessellation-assistedconvolutionalneuralnetworks.2023.NuclearScienceandTechniques.</p>
-            </div>
-            </div>
-            <div class="class">
-            <div class="paper">
-                <img src="/assets/paper4.png" alt="paper4">
-                <p>Gong,H.;Cheng,S.;Chen,Z.;Li,Q.*;Quilodrán-Casas,C.;Xiao,D.andArcucci,R.AnefficientdigitaltwinbasedonmachinelearningSVDautoencoderandgeneralisedlatentassimilationfornuclearreactorphysics.AnnalsofNuclearEnergy.179(2022):109431.[SCI]</p>
-            </div>
-            <div class="paper">
-                <img src="/assets/paper5.png" alt="paper5">
-                <p>Gong,H.;Cheng,S.;Chen,Z.andLi,Q*.Data-EnabledPhysics-InformedMachineLearningforReduced-OrderModelingDigitalTwin:ApplicationtoNuclearReactorPhysics.NuclearScienceandEngineering,Taylor&Francis,2022,196,668-693.[SCI]</p>
-            </div>
-            <div class="paper">
-                <img src="/assets/paper6.png" alt="paper6">
-                <p>龚禾林，洪历展，赵文博等.基于全局-局部搜索的核反应堆运行孪生反问题求解[J].原子能科学技术</p>
-            </div>
-            </div>
-            <div>
+            <div class="box">
                 <h2>专利</h2>
-            </div>
-            <div class="class">
-            <div class="patent">
-                <img src="/assets/patent1.png" alt="专利1">
-                <!-- <p>龚禾林，李庆，陈长，钟旻霄.用于反应堆运行参数优化的数据同化方法、系统及终端.中国,CN115408861B.2023-11-10[有权]</p> -->
-            </div>
-            <div class="patent">
-                <img src="/assets/patent2.png" alt="专利2">
-                <!-- <p>李庆,龚禾林,陈长,赵文博,于颖锐,彭星杰,宫兆虎,刘琨,周冰燕,刘佳艺,张斌,王冬勇.基于模型降阶和数据同化的堆芯功率分布在线监测方法及系统.中国,CN113409975B[P].2021-09-17.[有权]</p> -->
-            </div>
-            <div class="patent">
-                <img src="/assets/patent3.png" alt="专利3">
-                <!-- <p>龚禾林,李庆,于颖锐,陈长,赵文博,彭星杰,刘同先,娄磊,巨海涛,吉文浩.基于局部非线性修正的堆芯功率分布在线重构方法及系统.中国,CN113421669B[P].2021-09-21.[有权]</p> -->
-            </div>
+                <div class="class">
+                    <div class="patent">
+                        <a href="/assets/patent1.png">
+                        <img src="/assets/patent1.png" alt="专利1">
+                        </a>
+                    </div>
+                    <div class="patent">
+                        <a href="/assets/patent2.png">
+                        <img src="/assets/patent2.png" alt="专利2">
+                        </a>
+                    </div>
+                    <div class="patent">
+                        <a href="/assets/patent3.png">
+                        <img src="/assets/patent3.png" alt="专利3">
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
+        <script src="/com/box.js"></script>
     </main>
     <div id="footer"></div>
     <script src="/com/header_footer.js"></script>

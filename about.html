@@ -73,19 +73,64 @@
         #member h3{
         font-size: 25px;
         color: #027371;
-        padding:10px 5vw;
+        padding:20px 0;
+        left: 0;
         }
         #member img{
-        margin: 10px;
-        width: 12vw;
+        width: 180px;
+        height: 250px;
+        transition: scale 0.5s;
         }
-        #member p,#member h4{
+        #member p{
         text-align: center;
+        }
+        #member h4{
+        text-align: center;
+        padding:0 0 10px 0;    
+        }
+        .intro{
+        position: absolute;
+        top:0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(0,0,0,0.5);
+        opacity: 0; 
+        transition: opacity 0.5s; 
+        }
+        .card:hover .intro {
+        opacity: 1; 
+        }
+        .card:hover img {
+        scale: 1.05;
+        }
+        .card{
+        position: relative;
+        background-color: #D6EAE2;
+        border-radius: 10px;
+        scale: 1.05;
+        overflow: hidden;
+        }
+        .card p{
+        padding: 0 2%;
         }
         #contact p{
         font-size: 21px;
         color:#027371;
         padding:15px 4vw 30px;
+        }
+        .box{
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.6s ease,opacity 0.4s ease;
+        }
+        .box.show {
+        transform: translateX(0);
+        opacity: 1;
         }
       </style>
 </head>
@@ -189,94 +234,189 @@
     });
     </script>
     <div id="member">
+    <div class="box">
         <h2>团队介绍</h2>
-        <div style="display: flex;">
-        <div style="width: 30%;">
-            <h3 style="margin-bottom: 20px;">项目负责人</h3>
-            <img src="/assets/member1.jpg" style="width: 90%;">
-            <h4 style="font-size: 20px;">洪历展</h4>
-            <p style="font-size: 18px;margin-bottom: 10px;">创始人&CEO</p>
-            <p style="margin-bottom: 5px;">上海交通大学巴黎卓越工程师学院<br>信息工程+法语大二本科生</p>
-            <p>全国大学生数学建模大赛国家二等奖 
-            <br>上海市大学生健身健美锦标赛冠军 
-            <br>上海交通大学街头健身协会会长
-            <br>巴黎卓越工程师学院科创中心部长 
-            <br>已发表论文2篇，申请发明专利1项 
-            <br>上海交通大学优秀团员</p>
+        <div style="display: flex;padding-left:5%">
+            <div style="width: 25%;position: relative;">
+                <h3 style="margin-bottom: 40px;">项目负责人</h3>
+                <div class="card">
+                <img src="/assets/member1.jpg" style="width: 100%;height: 100%;;">
+                <h4 style="font-size: 20px;">洪历展</h4>
+                <p style="font-size: 18px;margin-bottom: 10px;">创始人&CEO</p>
+                <div class="intro">
+                <p>上海交通大学巴黎卓越工程师学院<br>信息工程+法语大二本科生<br>
+                <br>全国大学生数学建模大赛国家二等奖 
+                <br>上海市大学生健身健美锦标赛冠军 
+                <br>上海交通大学街头健身协会会长
+                <br>巴黎卓越工程师学院科创中心部长 
+                <br>已发表论文2篇，申请发明专利1项 
+                <br>上海交通大学优秀团员</p>
+                </div>
+                </div>
+            </div>
+            <div style="width: 65%;padding-left:5%">
+                <h3>项目核心成员</h3>
+                <div style="display: flex;">
+                <div class="team" style="width: 45%;">
+                    <h3>商科团队</h3>
+                    <div style="display: flex;justify-content: space-between;">
+                        <div class="card">
+                            <img src="/assets/member2.png">
+                            <h4>萧明远</h4>
+                            <div class="intro">
+                            <p>22级安泰经济与管理学院<br>
+                            <br>安泰职发协会宣传部长<br>天风证券实习生</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/assets/member3.png">
+                            <h4>刘晔梁</h4>
+                            <div class="intro">
+                            <p>22级安泰经济与管理学院<br>
+                                <br>交大红十字会宣传部长<br>曾奥玮咨询实习生</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team" style="width: 45%;padding-left:5%">
+                    <h3>设计团队</h3>
+                    <div style="display: flex;justify-content: space-between;">
+                        <div class="card">
+                            <img src="/assets/member4.png">
+                            <h4>敖婧珂</h4>
+                            <div class="intro">
+                            <p>23级巴黎卓越工程师学院<br>
+                            <br>卓越杯3D打印大赛三等奖<br>vex校内赛二等奖</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/assets/member5.png">
+                            <h4>赵心怡</h4>
+                            <div class="intro">
+                            <p>23级巴黎卓越工程师学院<br>
+                            <br>卓越杯3D打印大赛三等奖<br>vex校内赛一等奖</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team" style="width: 95%;">
+                <h3>工科团队</h3>
+                <div style="display: flex;justify-content: space-between;">
+                    <div class="card">
+                        <img src="/assets/member6.png">
+                        <h4>黄海城</h4>
+                        <div class="intro">
+                        <p>22级巴黎卓越工程师学院<br>
+                        <br>数学建模国赛省三等奖<br>一篇sci论文在投</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/member7.png">
+                        <h4>任子谦</h4>
+                        <div class="intro">
+                        <p>22级巴黎卓越工程师学院<br>
+                        <br>优秀团员<br>数学竞赛市二等奖</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/member8.png">
+                        <h4>关怀</h4>
+                        <div class="intro">
+                        <p>23级巴黎卓越工程师学院<br>
+                        <br>robomaster校内赛一等奖<br>vex校内赛一等奖</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/member9.png">
+                        <h4>郑子易</h4>
+                        <div class="intro">
+                        <p>23级巴黎卓越工程师学院<br>
+                        <br>美国大学生数学建模竞赛Finalist奖<br>vex校内赛三等奖</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-        <div style="width: 70%;">
-            <h3>项目核心成员</h3>
-            <div style="display: flex;">
-                <h3 style="margin-right: 25%;">商科团队</h3>
-                <h3>设计团队</h3>
-            </div>
-            <div style="display: flex;justify-content: space-around;">
-            <div style="display: flex;">
-                <div>
-                    <img src="/assets/member2.png">
-                    <h4>萧明远</h4>
-                    <p style="margin-bottom: 5px;">22级安泰经济与管理学院</p>
-                    <p>安泰职发协会宣传部长<br>天风证券实习生</p>
-                </div>
-                <div>
-                    <img src="/assets/member3.png">
-                    <h4>刘晔梁</h4>
-                    <p style="margin-bottom: 5px;">22级安泰经济与管理学院</p>
-                    <p>交大红十字会宣传部长<br>曾奥玮咨询实习生</p>
+        <div style="padding-left: 5%;">
+            <h3 style="margin-bottom: 20px;">专家顾问</h3>
+            <div>
+            <div class="team" style="display: flex;justify-content: space-evenly;padding-bottom: 3%;">
+            <div class="card" style="width: 45%;height:270px;display: flex;overflow: auto;">
+                <img src="/assets/prof1.png" style="padding-right: 2%;">
+                <div position>
+                <h4>龚禾林 副教授</h4>
+                <p>首席技术顾问</p>
+                <p style="text-align: left;"><br>上海交通大学巴黎卓越工程师学院长聘教轨副教授，博士生导师，中国核动力研究设计院高级工程师，法国索邦大学数学博士，长期从事工程科学计算与数字孪生和人工智能研究。
+                    <br>其团队在理论建模、数值分析、软件开发等领域取得显著成果，为国家核能工程的安全性、经济性及智能化提供支持。近五年，龚教授主持和参与多项国家级科研项目，在国内外顶级期刊和会议上发表论文30余篇，获得专利授权22项，荣获多项科技进步奖。
+                </p>
                 </div>
             </div>
-            <div style="display: flex;">
+            <div class="card" style="width: 45%;height:270px;display: flex;overflow: auto;">
+                <img src="/assets/prof2.png" style="padding-right: 2%;">
                 <div>
-                    <img src="/assets/member4.png">
-                    <h4>敖婧珂</h4>
-                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
-                    <p>卓越杯3D打印大赛三等奖<br>vex校内赛二等奖</p>
-                </div>
-                <div>
-                    <img src="/assets/member5.png">
-                    <h4>赵心怡</h4>
-                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
-                    <p>卓越杯3D打印大赛三等奖<br>vex校内赛一等奖</p>
+                <h4>赵旭 教授</h4>
+                <p>首席商业模式顾问</p>
+                <p style="text-align: left;"><br>上海交通大学安泰经济与管理学院教授，教育部首届创新创业教育指导委员会委员教育部首批创新创业导师，国家首批一流本科课程《创业基础》负责人上海创业研究中心主任。
+                    <br>研究领域有产业经济学，环境和能源经济政策，技术商业化。
+                </p>
                 </div>
             </div>
             </div>
-            <h3>工科团队</h3>
-            <div style="display: flex;justify-content: space-around;">
-                <div>
-                    <img src="/assets/member6.png">
-                    <h4>黄海城</h4>
-                    <p style="margin-bottom: 5px;">22级巴黎卓越工程师学院</p>
-                    <p>数学建模国赛省三等奖<br>一篇sci论文在投</p>
+            <div class="team" style="display: flex;justify-content: space-around;padding-bottom: 3%;">
+            <div class="card">
+                <img src="/assets/prof3.png">
+                <h4>吉宏俊</h4>
+                <p>技术顾问</p>
+                <div class="intro">
+                <p>上海交通大学巴黎卓越工程师学院副教授,法国索邦大学理学博士,研究领域为微分方程与动力系统，生物数学等</p>
                 </div>
-                <div>
-                    <img src="/assets/member7.png">
-                    <h4>任子谦</h4>
-                    <p style="margin-bottom: 5px;">22级巴黎卓越工程师学院</p>
-                    <p>优秀团员<br>数学竞赛市二等奖</p>
+            </div>
+            <div class="card">
+                <img src="/assets/prof4.png">
+                <h4>Yvon MADAY</h4>
+                <p>远程技术顾问</p>
+                <div class="intro">
+                <p>欧洲科学院院士</p>
                 </div>
-                <div>
-                    <img src="/assets/member8.png">
-                    <h4>关怀</h4>
-                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
-                    <p>robomaster校内赛一等奖<br>vex校内赛一等奖</p>
+            </div>
+            <div class="card">
+                <img src="/assets/prof5.png">
+                <h4>李庆</h4>
+                <p>远程技术顾问</p>
+                <div class="intro">
+                <p>教授</p>
                 </div>
-                <div>
-                    <img src="/assets/member9.png">
-                    <h4>郑子易</h4>
-                    <p style="margin-bottom: 5px;">23级巴黎卓越工程师学院</p>
-                    <p>美国大学生数学建模竞赛特等提名奖<br>vex校内赛三等奖</p>
+            </div>
+            <div class="card">
+                <img src="/assets/prof6.png">
+                <h4>O.mula</h4>
+                <p>远程技术顾问</p>
+                <div class="intro">
+                <p>副教授</p>
                 </div>
+            </div>
+            <div class="card">
+                <img src="/assets/prof7.png">
+                <h4>J.P.Argaud</h4>
+                <p>远程技术顾问</p>
+                <div class="intro">
+                <p>研究员</p>
+                </div>
+            </div>
+            </div>
             </div>
         </div>
-        </div>
-        <div>
-            <h3>专家顾问</h3>
-        </div>
+    </div>
     </div>
     <div id="contact">
+        <div class="box">
         <h2>加入我们/联系我们</h2>
         <p>微信号：Hong18860376438</p>
+        </div>
     </div>
+    <script src="/com/box.js"></script>
     <div id="footer"></div>
     <script src="/com/header_footer.js"></script>
 </body>
