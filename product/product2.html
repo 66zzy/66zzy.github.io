@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../com/header_footer.css">
     <style>
         .detail{
+            position: relative;
             height: 100vh;
             margin-top: 10vh;
         }
@@ -29,6 +30,22 @@
             font-size: 20px;
             cursor: pointer;
         }
+        .intro{
+            width: 40vw;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:10vw;
+            background-color: rgb(0,0,0,0.4);
+        }
+        @media (max-width: 768px){
+        .intro{
+            width: 80vw;
+        }
+        button{
+            width:25vw;
+        }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -38,11 +55,11 @@
         <section>
             <section class="detail">
                 <video autoplay muted loop src="/assets/aerospace.mp4"></video>
-                <div style="width: 40vw;position: absolute;top:50%;transform: translateY(-50%);left:10vw;background-color: rgb(0,0,0,0.4);">
-                    <h2 style="color: white;font-size: 40px;margin:0 0 10px 10px;">项目介绍</h2>
+                <div class="intro">
+                    <h2 style="color: white;font-size: 40px;margin:0 10px 10px 10px;">项目介绍</h2>
                     <br>
                     <br>
-                    <p style="font-size:20px; color:white;margin:0 0 10px 10px;">
+                    <p style="font-size:20px; color:white;margin:0 10px 10px 10px;">
 在航空航天领域，我们的数字孪生技术可以用于模拟飞行器的动力系统、结构设计以及飞行过程中的各种工况。例如，针对一架商用客机，我们的系统可以实时模拟发动机的性能参数、飞行姿态及航线规划。通过这些模拟数据，航空公司可以优化飞行计划，节省燃料成本，提高航班效率。根据统计数据，使用数字孪生技术优化飞行计划可以将燃料消耗降低，同时减少碳排放量。
                     </p>
                 </div>

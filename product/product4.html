@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../com/header_footer.css">
     <style>
         .detail{
+            position: relative;
             height: 100vh;
             margin-top: 10vh;
         }
@@ -29,6 +30,22 @@
             font-size: 20px;
             cursor: pointer;
         }
+        .intro{
+            width: 40vw;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:10vw;
+            background-color: rgb(0,0,0,0.4);
+        }
+        @media (max-width: 768px){
+        .intro{
+            width: 80vw;
+        }
+        button{
+            width:25vw;
+        }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -38,11 +55,11 @@
         <section>
             <section class="detail">
                 <video autoplay muted loop src="/assets/car.mp4"></video>
-                <div style="width: 40vw;position: absolute;top:50%;transform: translateY(-50%);left:10vw;background-color: rgb(0,0,0,0.4);">
-                    <h2 style="color: white;font-size: 40px;margin:0 0 10px 10px;">项目介绍</h2>
+                <div class="intro">
+                    <h2 style="color: white;font-size: 40px;margin:0 10px 10px 10px;">项目介绍</h2>
                     <br>
                     <br>
-                    <p style="font-size:20px; color:white;margin:0 0 10px 10px;">
+                    <p style="font-size:20px; color:white;margin:0 10px 10px 10px;">
 在新能源汽车制造领域，我们的数字孪生技术可以应用于模拟电动汽车的动力系统、车辆结构以及充电过程中的各种情况。例如，针对一款电动汽车型号，我们的系统可以实时模拟电池的充电参数、车辆行驶状态以及能源消耗情况。通过这些模拟数据，汽车制造商可以优化电池管理策略，延长电池寿命，提高车辆性能。据统计数据，使用数字孪生技术优化电池管理策略可以将电动汽车的续航里程提高，同时降低电池损耗率。
                     </p>
                 </div>

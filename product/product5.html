@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../com/header_footer.css">
     <style>
         .detail{
+            position: relative;
             height: 100vh;
             margin-top: 10vh;
         }
@@ -29,6 +30,22 @@
             font-size: 20px;
             cursor: pointer;
         }
+        .intro{
+            width: 40vw;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:10vw;
+            background-color: rgb(0,0,0,0.4);
+        }
+        @media (max-width: 768px){
+        .intro{
+            width: 80vw;
+        }
+        button{
+            width:25vw;
+        }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -38,11 +55,10 @@
         <section>
             <section class="detail">
                 <video autoplay muted loop src="/assets/model.mp4"></video>
-                <div style="width: 40vw;position: absolute;top:50%;transform: translateY(-50%);left:10vw;background-color: rgb(0,0,0,0.4);">
-                    <h2 style="color: white;font-size: 40px;margin:0 0 10px 10px;">项目介绍</h2>
+                <div class="intro">
+                    <h2 style="color: white;font-size: 40px;margin:0 10px 10px 10px;">项目介绍</h2>
                     <br>
-                    <br>
-                    <p style="font-size:20px; color:white;margin:0 0 10px 10px;">
+                    <p style="font-size:20px; color:white;margin:0 10px 10px 10px;">
 我们的模型验证服务主要面向开发大型语言模型或其他AI模型的企业客户，帮助他们验证和优化模型的性能、可靠性、安全性等。我们根据客户的实际需求，对所使用的大模型进行全面的评估，包括功能性、鲁棒性、隐私安全等多个维度，并进行可能的优化。我们借助数字孪生技术，持续监控模型在线运行情况，及时发现异常并采取应对措施。如图表12所示，大厂开发的AI大模型例如华为的“盘古大模型”，百度的“文心一言”和第四范式的“式说”给出工业方案和建议，我们利用快速精确核心求解器对方案进行快速模式验证，筛选出对工业体最有利的方案，反馈给AI大模型。
 在国家大力支持AI大模型+工业的背景下，大模型验证服务结合了大模型先进技术和专业的数字孪生技术，可以有效降低企业使用大模型的风险，提升AI模型的可靠性和可信度，具有广阔的市场前景。
                     </p>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/com/header_footer.css">
     <style>
         .detail{
-            margin: 12vh 4vw 0vw 4vw;
+            margin: 10vh 4vw 0vw 4vw;
         }
         .detail .class{
             width: 92vw;
@@ -17,6 +17,11 @@
         }
         .detail .class a{
             text-decoration: none;
+        }
+        .detail h2{
+            text-align: center;
+            font-size: 8vh;
+            line-height: 20vh;
         }
         .enter{
             width: 28vw;
@@ -34,12 +39,23 @@
             scale:1.1
         }
         .enter p{
-            font-size: 21px;
-            margin: 30px 0px 0px 30px;
+            font-size:larger;
+            margin-top: 2%;
+            text-align: center;
             color: black;
         }
         .enter:hover{
             background-color: lightgray;
+        }
+        @media (max-width: 768px){
+        .detail h2{
+            font-size: 3vh;
+            line-height: 5vh;
+            text-align: left;
+        }
+        .detail p{
+            font-size: 2vh;
+        }
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -48,7 +64,7 @@
     <div id="header"></div>
     <main>
         <section class="detail">
-            <h2 style="text-align: center;font-size: 35px;line-height: 140px;">产品&服务</h2>
+            <h2>产品&服务</h2>
             <div class="class">
             <a href="/product/product1.html"><div class="enter">
                 <img src="/assets/nuclear.jpg" alt="核电站">

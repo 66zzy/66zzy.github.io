@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../com/header_footer.css">
     <style>
         .detail{
+            position: relative;
             height: 100vh;
             margin-top: 10vh;
         }
@@ -29,6 +30,22 @@
             font-size: 20px;
             cursor: pointer;
         }
+        .intro{
+            width: 40vw;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:10vw;
+            background-color: rgb(0,0,0,0.4);
+        }
+        @media (max-width: 768px){
+        .intro{
+            width: 80vw;
+        }
+        button{
+            width:25vw;
+        }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -38,11 +55,11 @@
         <section>
             <section class="detail">
                 <video autoplay muted loop src="/assets/boat.mp4"></video>
-                <div style="width: 40vw;position: absolute;top:50%;transform: translateY(-50%);left:10vw;background-color: rgb(0,0,0,0.4);">
-                    <h2 style="color: white;font-size: 40px;margin:0 0 10px 10px">项目介绍</h2>
+                <div class="intro">
+                    <h2 style="color: white;font-size: 40px;margin:0 10px 10px 10px">项目介绍</h2>
                     <br>
                     <br>
-                    <p style="font-size:20px; color:white;margin:0 0 10px 10px;">
+                    <p style="font-size:20px; color:white;margin:0 10px 10px 10px;">
 在船舶领域，我们的数字孪生技术可应用于模拟船舶的动力系统、船体结构以及海上作业过程中的各种情况。以一艘大型货轮为例，我们的系统可以实时模拟船舶的航行参数、货物装载情况以及航线规划。通过这些模拟数据，船东可以优化航线选择，减少燃料消耗，提高运输效率。据统计数据，使用数字孪生技术优化航线规划可以将船舶的燃料消耗降低，同时减少航程时间。
                     </p>
                 </div>

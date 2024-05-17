@@ -34,6 +34,7 @@
             position: absolute;
             top: 70%;
             left: 10%;
+            width: 80%;
             font-size: 30px;
             color: white;
         }
@@ -41,11 +42,18 @@
             display: flex;
             justify-content: space-around;
         }
+        .advantage div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 29vw;
+            margin: 20px 0;
+            background-color:#027371;
+        }
         .advantage img{
-            margin: 5% 31%;
-            width: 38%;
+            margin: 5%;
+            width: 10vw;
             height: 10vw;
-            justify-content: center;
         }
         .advantage h2{
             font-size: 29px;
@@ -57,15 +65,20 @@
             margin: 5% 7% 7%;
             color: white;
         }
-        .advantage div{
-            width: 29vw;
-            margin: 20px 0;
-            background-color:#027371;
-        }
         @media (max-width: 768px){
-        /* .title{
-        font-size: 75px;
-        } */
+        .advantage{
+            display: block;
+        }
+        .advantage div{
+            width: 80vw;
+            margin: 10vw;
+        }
+        .news h2{
+            font-size: 70px;
+        }
+        .news p{
+            font-size: 20px;
+        }
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
