@@ -1,4 +1,4 @@
- * {
+* {
     margin: 0;
     padding: 0;
 }
@@ -9,7 +9,6 @@ header{
     width: 100%;
     z-index: 1000;
     color: white;
-    /* background-color:#027371; */
     background-color: white;
     height: 10vh;
 }
@@ -27,6 +26,10 @@ header h1{
     font-size: 30px;
     opacity: 0;
 }
+
+/* ---------------------------------------------------------------------- */
+/* 响应式 */
+
 header .list{
     position: absolute;
     right: 5vw;
@@ -34,16 +37,16 @@ header .list{
     line-height: 10vh;
     font-size: 30px;
 }
-header a{
+header .list a{
     color: white;
     text-decoration: none;
     font-size: 20px;
     padding: 5px 0px;
 }
-header a:hover{
+header .list a:hover{
     color: #87ceeb;
 }
-header li{
+header .list li{
     display: inline-block;
     vertical-align: top;
     text-align: center;
@@ -52,72 +55,65 @@ header li{
     background-color: #027371;
 }
 /* 选项 */
-header .menu .content{
+header .list .menu .content{
     position: absolute;
     top: 10vh;
     min-width: 180px;
-    /* display: none; */
     z-index: -1;
-    /* background-color: rgb(52, 74, 83, 0.7); */
     background-color:#027371;
-    /* box-shadow: 0 0 4px black; */
     text-align: left;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
 }
-header .menu:hover .content{
-    /* display: flex; */
+header .list .menu:hover .content{
     transform: translateY(0);
 }
-header .menu .content a{
+header .list .menu .content a{
     font-size: 18px;
 }
 /* 选项中的列 */
-header .menu .content div{
+header .list .menu .content div{
     display: block;
     line-height: 30px;
     margin:10px 10px;
 }
+
 /* 下划线动画 */
-header .menu .title {
+header .list .menu .title {
     background: linear-gradient(to right, skyblue 100%, transparent 0%);
     background-repeat: no-repeat;
     background-size: 0% 2px;
     background-position: 0 100%;
     transition: background-size 0.5s;
 }
-header .menu:hover .title {
+header .list .menu:hover .title {
     background-size: 100% 2px;
 }
-footer{
-    background-color: black;
-    color: #B7B7B7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    font-size: 20px;
+
+/* ---------------------------------------------------------------------- */
+/* 响应式设计 */
+
+header .ham{
+    display: none;
 }
-/* 之前做的响应式设计 */
 @media (max-width: 768px){
-    header h1{
+    header .logo{
         left: 50%;
         transform: translateX(-50%);
     }
-    header li{
-        display: block;
-        margin: 10px 0;
-    }
     header .list{
-        top:15vh;
-        line-height: normal;
+        display: none;
     }
-    header{
-        height: 10vh;
-        position: absolute;
-        background-color: black;
+    header .ham{
+        display: block;
     }
     footer{
         height: 30vh;
+    }
+    header .menu-icon{
+        display: block;
+    }
+    header .menu-icon span{
+        display: block;
     }
 }

@@ -1,0 +1,123 @@
+.menu-icon {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  border-radius: 10px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.menu-icon span:nth-child(1) {
+  top: 0;
+}
+
+.menu-icon span:nth-child(2) {
+  top: 50%;
+}
+
+.menu-icon span:nth-child(3) {
+  top: 100%;
+}
+
+.menu-icon.open span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+#menu {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  width: 80%;
+  height: 90vh;
+  background-color: white;
+  border-top: #000 1px solid;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+#menu.open {
+  transform: translateX(0);
+}
+#menu ul {
+  list-style: none;
+}
+
+#menu li{
+  position: relative;
+  padding: 20px 30px;
+  border-bottom: rgb(100,100,100) 1px solid;
+}
+
+#menu a {
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  width: 50%;
+}
+.expand-btn{
+  width: 30px;height: 30px;text-align: center;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+}
+.exit-btn{
+  width: 30px;height: 30px;text-align: center;line-height: 30px;
+  position: absolute;
+  left: 4vw;
+  top: 4vw;
+  color: #000;
+  cursor: pointer;
+  font-size: 33px;
+  margin-bottom: 30px;
+}
+.text{
+  margin: 16% 0 0 5%;
+  font-size: 30px;
+}
+.text a{
+  margin-left: 4%;
+  padding: 5% 0 5% 4%;
+  border-top: 1px solid #000;
+}
+.plate {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 90vh;
+  z-index: 1;
+  background-color: white;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+.plate.open {
+  transform: translateX(0);
+}
