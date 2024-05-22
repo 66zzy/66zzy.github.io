@@ -49,7 +49,7 @@
 
 #menu {
   position: fixed;
-  top: 10%;
+  top: 10vh;
   right: 0;
   width: 80%;
   height: 90vh;
